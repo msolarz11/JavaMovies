@@ -1,0 +1,5 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_full_star" />   <!-- Filled star -->
+    <item android:drawable="@drawable/ic_half_star" android:clipChildren="true" android:clipToPadding="true" /> <!-- Half star -->
+    <item android:drawable="@drawable/ic_empty_star" />   <!-- Empty star -->
+</layer-list>

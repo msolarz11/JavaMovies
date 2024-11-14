@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="movie"
+            type="com.example.movies.model.MovieDetails" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MovieDetails"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:textSize="22dp"
+            android:text="@{`Tytuł : `+ movie.title}"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"/>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:posterUrl="@{`https://image.tmdb.org/t/p/w500`+ movie.poster_path}"
+            android:layout_marginVertical="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`ID filmu : ` + String.valueOf(movie.id)}"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`Opis : ` + movie.overview}"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`liczba ocen : `+String.valueOf(movie.vote_count)}"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`Średnia ocen : ` + String.valueOf(movie.vote_average)}"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"/>
+
+
+
+
+
+
+    </LinearLayout>
+</layout>

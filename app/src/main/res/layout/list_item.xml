@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="movie"
+            type="com.example.movies.model.Movie" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/main"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:posterUrl="@{`https://image.tmdb.org/t/p/w500`+ movie.poster_path}" />
+        <TextView
+            android:id="@+id/movieTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{movie.title}"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="0dp"
+            android:layout_height="wrap_content"
+            android:numStars="10"
+            android:stepSize="0.1"
+            android:isIndicator="true"
+            android:rating="@{movie.vote_average.floatValue()}"
+            android:scaleX="1"
+            android:scaleY="1"            android:background="@android:color/transparent"/>
+<!--            android:progressDrawable="@drawable/custom_rating_star"-->
+
+    </LinearLayout>
+
+
+</layout>
